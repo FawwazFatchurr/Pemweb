@@ -1,0 +1,8 @@
+body {
+    margin: 0; /* Menghapus margin default */
+    background-image: url('../img/bg-login.jpg'); /* Path ke gambar */
+    background-size: cover; /* Menyesuaikan gambar agar menutupi seluruh elemen */
+    background-position: center; /* Memposisikan gambar di tengah */
+    background-repeat: no-repeat; /* Menghindari pengulangan gambar */
+    height: 100vh;
+}
