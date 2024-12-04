@@ -1,41 +1,38 @@
 <?php
-
-session_start();
-
-
-$koneksi = mysqli_connect("localhost", "root", "", "login") or die("Gagal koneksi");
-
-
-if (isset($_POST['masuk'])) {
-    $username = mysqli_real_escape_string($koneksi, $_POST['username']);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
-    
-    $query = "SELECT id, username, password FROM users WHERE username = '$username' LIMIT 1";
-    $result = mysqli_query($koneksi, $query);
+    $conn = new mysqli('localhost', 'root', '', 'login');
 
-    if (mysqli_num_rows($result) > 0) {
-        $user = mysqli_fetch_assoc($result);
-
-        
-        if ($password == $user['password']) {
-            
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['username'] = $user['username'];
-
-            
-            header("Location: home.php");
-            exit();
-        } else {
-            $error_message = "Password salah.";
-        }
-    } else {
-        $error_message = "Username tidak ditemukan.";
+    if ($conn->connect_error) {
+        die("Koneksi gagal: " . $conn->connect_error);
     }
 
-    mysqli_close($koneksi);
+    $stmt = $conn->prepare("SELECT password FROM users WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($hashed_password);
+        $stmt->fetch();
+
+        if (password_verify($password, $hashed_password)) {
+            echo "Login berhasil!";
+            
+        } else {
+            echo "Password salah!";
+        }
+    } else {
+        echo "Pengguna tidak ditemukan!";
+    }
+
+    $stmt->close();
+    $conn->close();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
