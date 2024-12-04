@@ -15,8 +15,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $conn->prepare("INSERT INTO users (username, password, email) VALUES (?, ?, ?)");
     $stmt->bind_param("sss", $username, $hashed_password, $email);
 
+    
     if ($stmt->execute()) {
         echo "Pengguna berhasil terdaftar!";
+
+        header("Location: login.php");
+        exit();
     } else {
         echo "Terjadi kesalahan saat mendaftar: " . $stmt->error;
     }
@@ -25,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
+
 
 
 <!DOCTYPE html>
