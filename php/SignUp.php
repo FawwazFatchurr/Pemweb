@@ -1,15 +1,31 @@
-<?php 
-    if(isset($_POST['Submit'])) {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $email = $_POST['email'];   
-        $koneksi=mysqli_connect("localhost","root","","login") or die ("gagal koneksi");
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $email = $_POST['email'];
 
-        $result = mysqli_query($koneksi, "INSERT INTO users(username,password,email) VALUES('$username', '$password', '$email')");
+    $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-        
+    $conn = new mysqli('localhost', 'root', '', 'login');
+
+    if ($conn->connect_error) {
+        die("Koneksi gagal: " . $conn->connect_error);
     }
+
+    $stmt = $conn->prepare("INSERT INTO users (username, password, email) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $username, $hashed_password, $email);
+
+    if ($stmt->execute()) {
+        echo "Pengguna berhasil terdaftar!";
+    } else {
+        echo "Terjadi kesalahan saat mendaftar: " . $stmt->error;
+    }
+
+    $stmt->close();
+    $conn->close();
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
