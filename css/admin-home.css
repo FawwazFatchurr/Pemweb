@@ -14,6 +14,7 @@ a {
   color: #d6b35b; /* Warna emas untuk logo */
 }
 
+
 .header {
   position: fixed;
   top: 0px;
@@ -25,6 +26,7 @@ a {
   border-top: 4px solid #8b733a; /* Garis emas tipis */
   border-bottom: 4px solid #8b733a;
   box-shadow: 0 0 5px rgba(255, 215, 0, 1);
+
   z-index: 999;
 }
 
@@ -120,112 +122,118 @@ a {
   cursor: pointer;
 }
 
+.header-admin h3{
+  font-size: 30px;
+  color: #d6b35b;
+}
+/* Gaya umum sidebar */
+.sidebar {
+    position: fixed;
+    top: 100px;
+    background-color: #373529;
+    height: 100vh;
+    width: 90px;
+    overflow: hidden;
+    transition: width 0.3s ease;
+}
+
+.sidebar:hover {
+    width: 220px; /* Melebar saat di-hover */
+}
+
+.sidebar-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px 10px ;
+    gap: 5px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+    color: #d6b35b;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    height: 50px;
+    width: 200px;
+}
+
+.sidebar-item svg {
+    width: 24px;
+    height: 24px;
+}
+
+.sidebar-item p {
+    max-height: 0; /* Awalnya disembunyikan */
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Ketika sidebar diperluas */
+.sidebar:hover .sidebar-item p {
+    max-height: 50px; /* Atur sesuai ukuran teks */
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.sidebar-item:hover{
+  background-color: #23210f;
+  color: white ;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Efek glow */
+  border-radius: 10px;
+  fill: white;
+}
+
+.sidebar-item svg {
+  fill: #d6b35b;  /* Warna default untuk ikon */
+  transition: fill 0.3s ease;  /* Animasi transisi warna */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .main{
   width: 100%;
-  background-image: url(https://images6.alphacoders.com/121/thumb-1920-1216459.jpg);  
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  padding: 100px;
-}
-
-.blur{
-  width: 100%;
-  backdrop-filter: blur(20px);
-}
-
-.judul-equip{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 80%;
-  margin: 70px auto;
-}
-
-.judul-equip h3{
-  font-size: 60px;
-  text-transform: uppercase;
-  color: #d6b35b;
-  border-bottom: 3px solid #d6b35b;
-
-}
-
-.equipment{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 50px;
-  font-family: "Mantinia", sans-serif;
-  width: 300px;
-  height: 40px;
-  padding: 0 40px;  
-  font-size: 25px;
-  text-transform: uppercase;
-  color: #d6b35b;
-  backdrop-filter: blur(10px);
-  background-color: #292720;
-  box-shadow: 0 0 20px rgba(214, 179, 91, 0.9) ;
-  border-radius: 5px;
-}
-
-.equipment:focus {
-  border-color: #d6b35b; /* Ubah warna border saat aktif */
-  outline: none; /* Hilangkan outline default */
-  box-shadow: 0 0 20px rgba(214, 179, 91, 0.9) ;
-}
-
-option{
-  width: 200px;
-  height: 40px;
-  font-family: "Mantinia", sans-serif;
-  box-shadow: 0 0 20px rgba(214, 179, 91, 0.9) ;
-}
-
-.table-equip-container{
-  width: 100%;
-  
-}
-
-.equip-table{
-  width: 100%;
-}
-
-.table-wrapper{
-  overflow: scroll;
-  scrollbar-width:none ;
-}
-
-table th{
-  background-color: #26241E ;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-table td{
-  text-align: center;
-  background-color: #1C1A15 ;
-}
-
-.pagination{
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-.buttonNxtPrv, .urutan{
-  padding: 10px 20px;
-  background-color:#1C1A15 ;
-  text-transform: uppercase;
-  border-radius: 5px;
-}
-
-.urutan{
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-
+  height: 100vh;
+  background-image: url('https://images2.alphacoders.com/132/thumb-1920-1328212.jpeg');}
 
 .footer{
   display: flex;

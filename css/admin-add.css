@@ -1,0 +1,388 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Mantinia", sans-serif;
+  /*background-color: #2f2915; /* Warna latar yang netral */
+}
+
+a {
+  text-decoration: none;
+  color: #d6b35b; /* Warna emas untuk logo */
+}
+
+
+.header {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 999;
+}
+
+.header-container{
+
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px auto;
+}
+
+.header-left, .header-right{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 30px;
+  color: #d6b35b;
+  font-size: 30px;
+  box-shadow: 0 0 50px #d6b35b;
+  border-bottom: 5px solid #d6b35b;
+  border-top:  5px solid #d6b35b;
+  background-color: #23210f;
+}
+
+.header-left{
+  margin-left: 90px;
+}
+
+
+.hum-menu {
+  display: none;
+  color: #d6b35b; /* Warna emas untuk teks menu */
+  font-size: 18px;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.header-admin h3{
+  font-size: 30px;
+  color: #d6b35b;
+}
+/* Gaya umum sidebar */
+.sidebar {
+    position: fixed;
+    background-color: #373529;
+    height: 100vh;
+    width: 90px;
+    overflow: hidden;
+    transition: width 0.3s ease;
+}
+
+.sidebar:hover {
+    width: 220px; /* Melebar saat di-hover */
+}
+
+.sidebar-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 150px 10px ;
+    gap: 5px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+    color: #d6b35b;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    height: 50px;
+    width: 200px;
+}
+
+.sidebar-item svg {
+    width: 24px;
+    height: 24px;
+}
+
+.sidebar-item p {
+    max-height: 0; /* Awalnya disembunyikan */
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Ketika sidebar diperluas */
+.sidebar:hover .sidebar-item p {
+    max-height: 50px; /* Atur sesuai ukuran teks */
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.sidebar-item:hover{
+  background-color: #23210f;
+  color: white ;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Efek glow */
+  border-radius: 10px;
+  fill: white;
+}
+
+.sidebar-item svg {
+  fill: #d6b35b;  /* Warna default untuk ikon */
+  transition: fill 0.3s ease;  /* Animasi transisi warna */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url('https://images2.alphacoders.com/132/thumb-1920-1328212.jpeg');
+}
+
+.equip-add-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  width: 60%;
+  padding: 30px 0 70px;
+  backdrop-filter: blur(10px);
+  border: 1px solid white;
+  border-radius: 20px;
+  
+
+}
+
+.judul{
+  margin: 20px auto;
+  font-size: 30px;
+}
+
+.form-container{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  width: 70%;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0 auto;
+}
+
+/*
+.form-left{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+}
+
+.form-label{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 2px;
+  padding-left: 10px;
+  height: 25px;
+}
+
+.form-right{
+  width: 30%;
+}
+
+.form-input{
+  width: 100%;
+  height: 27px;
+  margin: 2px;
+}
+
+.form-input input{
+  width: 100%;
+}
+
+*/
+
+table{
+  width: 70%;
+  margin: 0 auto;
+}
+
+table td{
+  height: 40px;
+}
+
+.form-left{
+  padding-left: 10px;
+  width: 30%;
+  height: 100%;
+  line-height: 30px; /* Sama dengan tinggi <td> */
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.form-right{
+  padding-left: 10px;
+  width: 40%;
+  height: 100%;
+}
+
+.form-right input{
+  width: 100%;
+  height: 30px;
+  padding-left: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 0;
+}
+
+
+.form-right input:focus{
+  border: 0;
+}
+
+.InputToDatabase{
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  font-size: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.InputToDatabase button{
+  font-family: 'Times New Roman', Times, serif;
+  width: 150px;
+  height: 60px;
+  font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+svg{
+  width: 25px;
+  height: 25px;
+  color: #d6b35b;
+
+}
+
+svg path {
+  fill: #d6b35b; /* Ganti warna dengan yang Anda inginkan */
+}
+
+.bot svg path {
+  fill: white; /* Ganti warna dengan yang Anda inginkan */
+}
+
+@media (max-width:1440px) {
+  .header-container{
+    width: 85%;
+  }
+  
+}
+
+
+@media (max-width: 1050px) {
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .hum-menu {
+    display: inline-block;
+  }
+
+  
+  .header-kanan {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: rgba(47, 41, 21, 0.95);
+    width: 250px;
+    height: 100vh;
+    top: 100px;
+    right: -250px; /* Awal di luar layar */
+    transform: translateX(0);
+    transition: all 0.3s ease-in-out;
+    padding: 20px;
+    gap: 30px;
+    z-index: 900;
+  }
+
+  .header-kanan.active {
+    transform: translateX(-250px); /* Masuk ke dalam layar */
+  }
+
+  
+}
+
+@media (max-width: 750px) {
+  .footer-detail .mid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+}
+
+@media (max-width: 640px){
+  .footer-judul{
+    font-size: 35px;
+  }
+  .footer-detail .top,
+  .footer-detail .mid,
+  .footer-detail .bot,
+  .footer-detail .copyright{
+    font-size: 12px;
+  }
+}
