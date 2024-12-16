@@ -25,7 +25,6 @@ a {
   border-top: 4px solid #8b733a; /* Garis emas tipis */
   border-bottom: 4px solid #8b733a;
   box-shadow: 0 0 5px rgba(255, 215, 0, 1);
-
   z-index: 999;
 }
 
@@ -110,6 +109,91 @@ a {
   color: #ffffff; /* Warna putih saat hover */
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Efek glow */
 }
+
+.user-name {
+  position: relative; 
+  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-name h3 {
+  margin: 0;
+  padding: 5px 0;
+  font-size: 16px;
+  color: #d6b35b;
+  font-family: Arial, sans-serif;
+}
+
+.user-name img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+
+.dropdown-menu {
+  display: block; 
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  background-color: #2f2915; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px 0; 
+  z-index: 10;
+  min-width: 150px; 
+  opacity: 0; 
+  transform: translateY(-10px); 
+  pointer-events: none; 
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+  
+}
+.dropdown-menu h3{
+  font-family: "Mantinia", sans-serif;
+
+}
+
+
+.dropdown-menu a {
+  text-decoration: none; 
+  display: block; 
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  color: #333; 
+  transition: background-color 0.3s, color 0.3s; 
+  font-family: "Mantinia", sans-serif;
+
+}
+
+.dropdown-menu a:hover {
+  
+  color: #ffffff; 
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); 
+}
+
+.user-name:hover .dropdown-menu {
+  opacity: 1; 
+  transform: translateY(0);
+  pointer-events: auto; 
+}
+
+.btn-profile h3:hover{
+  
+  color: #ffffff; 
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
 
 .hum-menu {
   display: none;
@@ -199,45 +283,54 @@ a {
   color: #d6b35b;
 }
 
-.input-stat-left h4{
-  font-size: 30px;
-  font-weight: 400;
+.char-stat-list {
+  margin-top: 10px;
 }
 
-.input-stat-right{
+.input-stat {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.input-stat-left h4 {
+  margin: 0;
+  font-size: 1em;
+}
+
+.input-stat-right {
+  display: flex;
   align-items: center;
 }
 
-.input-stat-right input{
-  width: 40px;
-  height: 30px;
-  text-align: center;
-  font-family: "Mantinia", sans-serif;
-  font-size: 25px;
-  font-weight: 800;
-  color: #d6b35b;
-  background-color: rgba(0, 0, 0, 0);
-
+/* Stat Buttons */
+.input-stat-right button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #d4af37;
+  margin: 0 5px;
 }
 
-.input-stat-right .minus,
-.input-stat-right .plus{
+.input-stat-right button img {
+  width: 15px;
+  transform: rotate(90deg);
+}
+
+.input-stat-right button.minus img {
+  transform: rotate(-90deg);
+}
+
+.input-stat-right input {
   width: 30px;
-  height: 30px;
-  border: 0;
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.input-stat-right .plus img{
-  transform: rotate(180deg);
-}
-
-.input-stat-right .minus img,
-.input-stat-right .plus img{
-  width: 100%;
-  height: 100%;
+  text-align: center;
+  border: none;
+  background-color: #444;
+  color: white;
+  font-size: 1.1em;
+  pointer-events: none;
 }
 
 .char-stat-result{
@@ -312,7 +405,67 @@ a {
 
 }
 
+.popup{
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 600px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Menyesuaikan posisi ke tengah */
+  background-color: rgba(47, 41, 21, 0.9);
+  border-radius: 6px;
+  border: 1px solid #d6b35b;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+}
 
+
+.popup.hidden{
+  display: none;
+}
+
+.popup-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  width: 90%;
+  height: 95%;
+}
+
+.popup-content input{
+  width: 50%;
+  height: 25px;
+  background-color: #2f2915;
+  color: white;
+  border: 1px solid #d6b35b;
+  padding-left: 20px;
+}
+
+.equip-select{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.equip-select-item{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 30px;
+  height: 100px
+}
+
+.equip-select-item img{
+  height: 100% ;
+  width: 150px;
+}
 
 
 

@@ -13,6 +13,13 @@ body{
     font-family: 'Mantinia', sans-serif;
 }
 
+.blur{
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+
+}
+
 .bg-container{
     position: fixed;
     top: 0;
@@ -54,12 +61,13 @@ body{
 }
 
 .form-container{
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(20, 20, 0, 0.3);
     padding: 20px;
     max-width: 600px;
     width: 100%;
     border-radius: 15px;
     box-shadow: 0 0 50px rgba(255, 215, 0, 0.8); /* Warna bayangan emas */
+    backdrop-filter: blur(10px);
 }
 
 h1{
@@ -81,6 +89,7 @@ h1{
     margin: 1px auto;
     border-radius: 10px;
     padding-left: 20px;
+    
 }
 
 input::placeholder{
@@ -104,11 +113,12 @@ input::placeholder{
 
 button{
     height: 40px;
-    width: 40%;
+    width: 30%;
     border-radius: 10px;
     font-family: 'Mantinia', sans-serif;
     font-size: 20px;
     cursor: pointer;
+    color: rgb(174, 179, 17);
 }
 
 h2{
@@ -125,17 +135,24 @@ a{
 
 .backBtn{
     position: fixed;
-    left: 20px;
-    top: 30px;
+    left: 0px;
+    top: 0px;
     z-index: 1;
+    width: 80px;
+    height: 40px;
     display: flex;
     flex-direction: row;
-    color: white;
+    align-items: center;
+    justify-content: center;
+    color: d6b35b;
     padding: 5px 10px;
-    border-radius: 20px;
-    background-color: rgb(198, 179, 8);
+    border-bottom-right-radius: 20px;
+    border: 4px solid #8b733a; /* Garis emas tipis */
+    background-color: #2f2915; /* Transparansi 80% */
 }
 
-.backBtn img{
-    width: 20px;
+
+.backBtn p{
+    font-size: 20px;
+    font-weight: 200;
 }

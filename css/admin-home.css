@@ -13,104 +13,42 @@ a {
   text-decoration: none;
   color: #d6b35b; /* Warna emas untuk logo */
 }
-
-
 .header {
   position: fixed;
   top: 0px;
   left: 0;
   width: 100%;
-  height: 100px;
   padding: 10px 0;
-  background: linear-gradient(to bottom, #23210f, #2f2915); /* Gradasi gelap */
-  border-top: 4px solid #8b733a; /* Garis emas tipis */
-  border-bottom: 4px solid #8b733a;
-  box-shadow: 0 0 5px rgba(255, 215, 0, 1);
-
   z-index: 999;
 }
 
-.bingkai1 {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, #23210f, #2f2915); /* Gradasi gelap */
-  border-top: 4px solid #8b733a; /* Garis emas tipis */
-  border-bottom: 4px solid #8b733a;
-  box-shadow: 0 0 5px rgba(255, 215, 0, 1);
-}
+.header-container{
 
-.header-container {
+  width: 80%;
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  width: 70%;
-  height: 100%;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 
-@media (max-width:1350px) {
-  .header-container{
-    width: 90%;
-  }
-  
-}
-
-.logo {
+.header-left, .header-right{
   display: flex;
   align-items: center;
-  margin-top: 5px;
-  color: #d6b35b; /* Warna emas untuk logo */
-  font-size: 40px;
-  font-weight: bold;
-  padding: 20px;
-}
-
-.header-kanan {
-  display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: center;
+  padding: 10px 30px;
+  color: #d6b35b;
+  font-size: 30px;
+  box-shadow: 0 0 50px #d6b35b;
+  border-bottom: 5px solid #d6b35b;
+  border-top:  5px solid #d6b35b;
+  background-color: #23210f;
 }
 
-.navigasi-login {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  width: 150px;
-  height: 40px;
-  margin-left: 10px;
-  color: #2f2915;
-  border-radius: 10px;
-  background-color: #d6b35b;
+.header-left{
+  margin-left: 90px;
 }
 
-.navigasi-login h3 {
-  color: #2f2915; /* Warna emas untuk teks menu */
-  font-size: 18px;
-  margin: 0 15px;
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: color 0.3s ease;
-  cursor: pointer;
-}
-
-.navigasi h3 {
-  color: #d6b35b; /* Warna emas untuk teks menu */
-  font-size: 18px;
-  margin: 0 15px;
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: color 0.3s ease;
-  cursor: pointer;
-}
-
-.navigasi h3:hover,
-.navigasi-login:hover {
-  color: #ffffff; /* Warna putih saat hover */
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Efek glow */
-}
 
 .hum-menu {
   display: none;
@@ -129,7 +67,6 @@ a {
 /* Gaya umum sidebar */
 .sidebar {
     position: fixed;
-    top: 100px;
     background-color: #373529;
     height: 100vh;
     width: 90px;
@@ -145,7 +82,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 50px 10px ;
+    padding: 150px 10px ;
     gap: 5px;
 }
 
@@ -233,7 +170,7 @@ a {
 .main{
   width: 100%;
   height: 100vh;
-  background-image: url('https://images2.alphacoders.com/132/thumb-1920-1328212.jpeg');}
+  background-image: url('https://images3.alphacoders.com/136/thumb-1920-1367175.jpeg');}
 
 .footer{
   display: flex;

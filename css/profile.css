@@ -9,6 +9,7 @@ body {
   /*background-color: #2f2915; /* Warna latar yang netral */
 }
 
+
 a {
   text-decoration: none;
   color: #d6b35b; /* Warna emas untuk logo */
@@ -25,6 +26,7 @@ a {
   border-top: 4px solid #8b733a; /* Garis emas tipis */
   border-bottom: 4px solid #8b733a;
   box-shadow: 0 0 5px rgba(255, 215, 0, 1);
+
   z-index: 999;
 }
 
@@ -177,7 +179,6 @@ a {
 }
 
 .dropdown-menu a:hover {
-  
   color: #ffffff; 
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); 
 }
@@ -189,14 +190,14 @@ a {
 }
 
 .btn-profile h3:hover{
-  
   color: #ffffff; 
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
 }
 
+
 .hum-menu {
   display: none;
-  color: #d6b35b; /* Warna emas untuk teks menu */
+  color: #d6b35b; 
   font-size: 18px;
   margin: 0 15px;
   font-weight: 500;
@@ -206,109 +207,83 @@ a {
 
 .main{
   width: 100%;
-  background-image: url(https://images6.alphacoders.com/121/thumb-1920-1216459.jpg);  
+  height: 100vh;
+  background-image: url('https://images3.alphacoders.com/135/thumb-1920-1353566.jpeg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-  padding: 100px;
 }
 
-.blur{
+.overlay{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  backdrop-filter: blur(20px);
+  height: 100vh;
 }
 
-.judul-equip{
+.profile-container{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 80%;
-  margin: 70px auto;
+  gap: 50px;
+  width: 60%;
 }
 
-.judul-equip h3{
-  font-size: 60px;
-  text-transform: uppercase;
-  color: #d6b35b;
-  border-bottom: 3px solid #d6b35b;
-
+.profile-judul{
+  font-size: 50px;
+  color: #23210f;
 }
 
-.equipment{
+.profile-detail{
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-top: 50px;
-  font-family: "Mantinia", sans-serif;
-  width: 300px;
-  height: 40px;
-  padding: 0 40px;  
-  font-size: 25px;
-  text-transform: uppercase;
-  color: #d6b35b;
-  backdrop-filter: blur(10px);
-  background-color: #292720;
-  box-shadow: 0 0 20px rgba(214, 179, 91, 0.9) ;
-  border-radius: 5px;
+  width: 100%;
+  padding: 30px;
+  background-color: rgba(24, 22, 6, 0.6);
+  border-radius: 10px;
+  gap: 30px;
 }
 
-.equipment:focus {
-  border-color: #d6b35b; /* Ubah warna border saat aktif */
-  outline: none; /* Hilangkan outline default */
-  box-shadow: 0 0 20px rgba(214, 179, 91, 0.9) ;
-}
-
-option{
+.detail-img{
   width: 200px;
-  height: 40px;
-  font-family: "Mantinia", sans-serif;
-  box-shadow: 0 0 20px rgba(214, 179, 91, 0.9) ;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid white;
 }
 
-.table-equip-container{
-  width: 100%;
-  
+.detail-keterangan{
+  width: 70%;
+  color: #d6b35b;
+  font-size: 25px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  font-family: 'Times New Roman', Times, serif;
 }
 
-.equip-table{
-  width: 100%;
-}
-
-.table-wrapper{
-  overflow: scroll;
-  scrollbar-width:none ;
-}
-
-table th{
-  background-color: #26241E ;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-table td{
-  text-align: center;
-  background-color: #1C1A15 ;
-}
-
-.pagination{
+.keterangan-left,
+.keterangan-right{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   gap: 20px;
-}
-.buttonNxtPrv, .urutan{
-  padding: 10px 20px;
-  background-color:#1C1A15 ;
-  text-transform: uppercase;
-  border-radius: 5px;
+  width: 100%;
+
 }
 
-.urutan{
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
+.detail-item{
+  width: 100%;
+  background-color: rgba(35, 33, 15, 0.9);
+  padding: 5px 20px;
 }
+
+
+
+
+
+
 
 
 .footer{
